@@ -9,18 +9,17 @@ using System.Threading.Tasks;
 
 namespace net_ef_videogame
 {
-    [Table("videogame")]
+    [Table("softwarehouse")]
     [Index(nameof(Name), IsUnique = false)]
-    public class Videogame
+
+    public class SoftwareHouse
     {
-        [Key] public int VideogameId { get; set; }
+        [Key] public int SoftwareHouseId { get; set; }
         public string Name { get; set; }
-        public string Overview { get; set; }
-        [Column("release_date")]
-        public DateTime ReleaseDate { get; set; }
+        public string City { get; set; }
+        public string Country { get; set; }
 
-        public int SoftwareHouseId { get; set; }
+        public List<Videogame> Videogames { get; set; }
 
-        public SoftwareHouse SoftwareHouse { get; set; }
     }
 }
