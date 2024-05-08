@@ -14,12 +14,22 @@ namespace net_ef_videogame
 
     public class SoftwareHouse
     {
-        [Key] public int SoftwareHouseId { get; set; }
+        [Key]
+        public int SoftwareHouseId { get; set; }
+        [Column("name")]
         public string Name { get; set; }
+        [Column("city")]
         public string City { get; set; }
+        [Column("country")]
         public string Country { get; set; }
 
         public List<Videogame> Videogames { get; set; }
 
+        public SoftwareHouse(string name, string city, string country)
+        {
+            Name = name;
+            City = city;
+            Country = country;
+        }
     }
 }
