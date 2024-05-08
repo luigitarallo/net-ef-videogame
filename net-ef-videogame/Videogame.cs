@@ -43,6 +43,10 @@ namespace net_ef_videogame
             ReleaseDate = releaseDate;
             SoftwareHouseId = softwareHouseId;
         }
+        public override string ToString()
+        {
+            return $"Nome: {Name}{Environment.NewLine}Descrizione: {Overview}{Environment.NewLine}Data di rilascio: {ReleaseDate}{Environment.NewLine}ID Software House: {SoftwareHouseId}";
+        }
 
     }
 }

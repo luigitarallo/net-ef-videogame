@@ -100,8 +100,15 @@ namespace net_ef_videogame
                             Console.WriteLine("ID deve essere un numero. Riprova.");
                             continue;
                         }
-                        
-                        break;
+                        Videogame videogameSearched = VideogameManager.GetVideogameById(id);
+                        if (videogameSearched != null)
+                        {
+                            Console.WriteLine(videogameSearched.ToString());
+                        }
+                        else
+                        {
+                            Console.WriteLine("Nessun videogame trovato");
+                        }
                         break;
                     case 3:
                         break;

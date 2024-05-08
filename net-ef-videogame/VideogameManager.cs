@@ -24,7 +24,23 @@ namespace net_ef_videogame
             }
         }
         // READ
-
-
+        public static Videogame? GetVideogameById(int id)
+        {
+            using VideogameContext db = new VideogameContext();
+            try
+            {
+                Videogame? videoGameSearched = db.Videogames.Where(videogame=> videogame.VideogameId == id).FirstOrDefault();
+                if (videoGameSearched == null)
+                {
+                    return null;
+                }
+                return videoGameSearched;
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine($"Si è verificato un errore durante la ricerca del videogioco: {ex.Message}");
+                return null;
+            }
+        }
     }
 }
